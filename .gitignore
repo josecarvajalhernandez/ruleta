@@ -1,4 +1,5 @@
 ruleta_backend/node_modules
+ruleta_backend/dist
 # Logs
 logs
 *.log
