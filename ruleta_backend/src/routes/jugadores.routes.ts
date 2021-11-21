@@ -3,6 +3,8 @@ const router = Router();
 
 import * as jugadorCtrl from './jugadores.controllers'
 
+router.get('/', jugadorCtrl.getDefault);
+
 router.get('/jugadores', jugadorCtrl.getJugadores);
 
 router.get('/jugadores/:id', jugadorCtrl.getJugador);

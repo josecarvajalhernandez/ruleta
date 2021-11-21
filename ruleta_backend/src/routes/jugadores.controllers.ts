@@ -25,6 +25,27 @@ export const getJugadores: RequestHandler = async(req, res) => {
     return res.json(jugadores);
 }
 
+export const getDefault: RequestHandler = async(req, res) => {
+    try{
+     //   const jugadores = await Jugador.find()
+        const jugadores = ['algo','otro','probando','alfin esto pinta bien']
+        console.log(jugadores);
+     return res.json(jugadores);
+    } catch (error){
+        //return  res.json(error);  
+        res.json(error); 
+    }
+    
+    const jugadores = await Jugador.find();
+    return res.json(jugadores);
+}
+
+const intervaloEjecutarRuleta = 180000;
+
+setInterval(()=>{
+    console.log('esto será la funcion core desde el ctrl:' + Date());
+}, intervaloEjecutarRuleta);
+
 
 export const getJugador: RequestHandler = async(req, res) => {
     //const jugadorFound = await Jugador.findById(req.params.id)
