@@ -5,6 +5,7 @@ import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
 
 import JugadorList from './components/Jugadores/JugadorList';
+import JugadorForm from './components/Jugadores/JugadorForm';
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,7 +13,8 @@ ReactDOM.render(
         <div className="container p-4">
           <Routes>
             <Route path='/' element={<JugadorList/>}/>
-            
+            <Route path='/new-jugador' element={<JugadorForm/>}/>
+            <Route path='/update/:id' element={<JugadorForm/>}/>
           </Routes>     
         </div> 
     </BrowserRouter>   </React.StrictMode>,
