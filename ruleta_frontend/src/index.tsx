@@ -1,23 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+
 import reportWebVitals from './reportWebVitals';
 import {BrowserRouter, Route, Routes} from 'react-router-dom'
+import { ToastContainer } from "react-toastify";
 
 import JugadorList from './components/Jugadores/JugadorList';
 import JugadorForm from './components/Jugadores/JugadorForm';
+import Navbar from "./components/Navbar/Navbar";
+
+import 'react-toastify/dist/ReactToastify.css';
+import './index.css';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
+      <Navbar/>
         <div className="container p-4">
           <Routes>
             <Route path='/' element={<JugadorList/>}/>
             <Route path='/new-jugador' element={<JugadorForm/>}/>
             <Route path='/update/:id' element={<JugadorForm/>}/>
           </Routes>     
+          <ToastContainer/>
         </div> 
-    </BrowserRouter>   </React.StrictMode>,
+    </BrowserRouter> 
+   </React.StrictMode>,
   document.getElementById('root')
 );
 

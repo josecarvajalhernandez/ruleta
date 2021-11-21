@@ -1,7 +1,6 @@
 export interface Jugador {
-    description:string;
-    title:string;
-    url:string;
+    nombre:string;
+    saldo:string;
     createdAt?:string | Date;
     updatedAt?:string | Date;
     _id?:string;
