@@ -2,9 +2,9 @@ import { RequestHandler } from "express";
 import Jugador from './Jugador';
  
 export const createJugador: RequestHandler = async (req, res) => {
-    const jugadorFound = await Jugador.findOne({url: req.body.url})
+    const jugadorFound = await Jugador.findOne({nombre: req.body.nombre})
     if(jugadorFound){
-        return res.status(301).json({message: 'The URL already exists'});
+        return res.status(301).json({message: 'jugador ya existe'});
     }
     const jugador = new Jugador (req.body);
     const savedJugador = await jugador.save();
