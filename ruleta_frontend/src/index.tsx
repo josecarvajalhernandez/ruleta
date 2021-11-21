@@ -2,11 +2,20 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
+import {BrowserRouter, Route, Routes} from 'react-router-dom'
+
+import JugadorList from './components/Jugadores/JugadorList';
 
 ReactDOM.render(
   <React.StrictMode>
-    <h1>Iniciando Front</h1>  
-  </React.StrictMode>,
+    <BrowserRouter>
+        <div className="container p-4">
+          <Routes>
+            <Route path='/' element={<JugadorList/>}/>
+            
+          </Routes>     
+        </div> 
+    </BrowserRouter>   </React.StrictMode>,
   document.getElementById('root')
 );
 
