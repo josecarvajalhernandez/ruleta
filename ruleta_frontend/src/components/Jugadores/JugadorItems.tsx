@@ -19,12 +19,14 @@ const JugadorItem = ({jugador,loadJugadores}:Props) =>{
 
     return(
         <tr>
+            <td onClick={()=> navigate(`/update/${jugador._id}`)}>{jugador.nombre}</td>
+            <td onClick={()=> navigate(`/update/${jugador._id}`)}>{jugador.saldo}</td>
+            <td><span className="text-danger" onClick={() => jugador._id && handleDelete(jugador._id)}>X</span>    </td>    
+            <h2
+               
+            ></h2>
+            <h3></h3>
             
-        <h2
-            onClick={()=> navigate(`/update/${jugador._id}`)}
-        >{jugador.nombre}</h2>
-        <h3>Saldo Actual:{jugador.saldo}</h3>
-        <span className="text-danger" onClick={() => jugador._id && handleDelete(jugador._id)}>X</span>    
         </tr>
     )
 }
