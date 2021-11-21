@@ -3,29 +3,23 @@ import { Jugador } from "./Jugador";
 import * as  JugadorService  from "./JugadorService";
 import {toast} from 'react-toastify';
 import {useNavigate, useParams} from 'react-router-dom';
-import { getJugadores } from './JugadorService';
 type InputChange = ChangeEvent<HTMLInputElement | HTMLTextAreaElement> 
 
-interface Params{
-  id: string;
-}
 
 const JugadorForm = () => {
+   const initialState = {
+      nombre:"",
+      saldo:""
+   }
+   const [jugador, setJugador] = useState<Jugador>(initialState);
 
-  const navigate = useNavigate();
-  const params = useParams();
+   const navigate = useNavigate();
 
-  console.log(params);
+   const params = useParams();
 
-  const initialState = {
-    nombre:"",
-    saldo:""
-  }
-
-  const [jugador, setJugador] = useState<Jugador>(initialState);
-  const handleInputChange = (e: InputChange) => {
+   const handleInputChange = (e: InputChange) => {
       setJugador({...jugador, [e.target.name]: e.target.value})
-  }
+   }
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -65,7 +59,7 @@ const JugadorForm = () => {
               }
             <form onSubmit={handleSubmit}>
               <div className="form-group">
-                <label htmlFor="title">Title*</label>
+                <label htmlFor="nombre">Nombre*</label>
 
                 <input
                   type="text"
@@ -78,7 +72,7 @@ const JugadorForm = () => {
                 />
               </div>
               <div className="form-group">
-                <label htmlFor="url">URL*</label>
+                <label htmlFor="saldo">Saldo*</label>
                 <input
                   type="text"
                   name="saldo"

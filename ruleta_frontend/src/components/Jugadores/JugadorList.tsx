@@ -26,10 +26,18 @@ const JugadorList = () => {
     }, [])
 
     return(
-        <div className="row">
-            {jugadores.map((jugador) =>{ 
-                return <JugadorItem jugador={jugador} key={jugador._id} loadJugadores={loadJugadores}/>
-            })}
+
+        <div id='ALGO' className="row">
+            <table>
+               <tr> 
+                  <th>Nombre Jugador</th>
+                  <th>Saldo Actual</th>
+                  <th>Eliminar</th>
+               </tr>
+               {jugadores.map((jugador) =>{ 
+                  return <JugadorItem jugador={jugador} key={jugador._id} loadJugadores={loadJugadores}/>
+               })}
+            </table>
         </div>
     )
 }

@@ -18,17 +18,14 @@ const JugadorItem = ({jugador,loadJugadores}:Props) =>{
     }
 
     return(
-        <div className="col-md-4 p-2">
-
-            <div className="card card-body jugador-card">
-                <div className="d-flex justify-content-between">
-                    <h1
-                        onClick={()=> navigate(`/update/${jugador._id}`)}
-                    >{jugador.nombre}</h1>
-                    <span className="text-danger" onClick={() => jugador._id && handleDelete(jugador._id)}>X</span>    
-                </div>
-            </div>
-        </div>
+        <tr>
+            
+        <h2
+            onClick={()=> navigate(`/update/${jugador._id}`)}
+        >{jugador.nombre}</h2>
+        <h3>Saldo Actual:{jugador.saldo}</h3>
+        <span className="text-danger" onClick={() => jugador._id && handleDelete(jugador._id)}>X</span>    
+        </tr>
     )
 }
 export default JugadorItem
