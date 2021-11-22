@@ -10,7 +10,7 @@ import JugadorForm from './components/Jugadores/JugadorForm';
 import Navbar from "./components/Navbar/Navbar";
 
 import 'react-toastify/dist/ReactToastify.css';
-import 'bootswatch/dist/pulse/bootstrap.min.css'
+import 'bootswatch/dist/quartz/bootstrap.min.css';
 import './index.css';
 
 ReactDOM.render(

@@ -28,15 +28,20 @@ const JugadorList = () => {
     return(
 
         <div id='ALGO' className="row">
-            <table>
-               <tr> 
-                  <th>Nombre Jugador</th>
-                  <th>Saldo Actual</th>
-                  <th>Eliminar</th>
-               </tr>
-               {jugadores.map((jugador) =>{ 
-                  return <JugadorItem jugador={jugador} key={jugador._id} loadJugadores={loadJugadores}/>
-               })}
+            <table className="table table-hover">
+               <thead className="thead-dark">
+                  <tr className="text-center"> 
+                     <th>Nombre Jugador</th>
+                     <th>Saldo Actual</th>
+                     <th>Modificar</th>
+                     <th>Eliminar</th>
+                  </tr>
+               </thead>
+               <tbody>
+                  {jugadores.map((jugador) =>{ 
+                     return <JugadorItem jugador={jugador} key={jugador._id} loadJugadores={loadJugadores}/>
+                  })}
+               </tbody>
             </table>
         </div>
     )

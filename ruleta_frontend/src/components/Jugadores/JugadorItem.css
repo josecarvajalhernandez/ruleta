@@ -1,4 +1,6 @@
-.jugador-card:hover {
-    border: 1px solid #b0b0b0;
+.jugador-row:hover {
+    font-weight:bold;
+  }
+  .jugador-row-delete:hover {
     cursor: pointer;
   }

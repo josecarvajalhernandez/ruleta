@@ -25,10 +25,11 @@ const JugadorForm = () => {
     e.preventDefault();
     if(!params.id){
       await JugadorService.createJugador(jugador);
-      toast.success('Ingresa Nuevo Jugador');
+      toast.success('Ha ingresado un nuevo jugador');
       setJugador(initialState);    
     }else{
-      await JugadorService.updateJugador(params.id, jugador)
+      await JugadorService.updateJugador(params.id, jugador);
+      toast.success('Datos de jugador editado');
     }
    
     navigate('/');
