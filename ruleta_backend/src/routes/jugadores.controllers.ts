@@ -42,8 +42,12 @@ export const getDefault: RequestHandler = async(req, res) => {
 
 const intervaloEjecutarRuleta = 180000;
 
-setInterval(()=>{
+setInterval(async()=>{
     console.log('esto será la funcion core desde el ctrl:' + Date());
+    const listaJugadores =  await Jugador.find();
+    //const arreglo = { "nombre": "jhon-snow", "saldo": "120010" }
+  //  let jugadorUpdated = await Jugador.findByIdAndUpdate("619ae066d0581ce0afb2562d",arreglo);
+    console.log(listaJugadores);
 }, intervaloEjecutarRuleta);
 
 
@@ -68,6 +72,7 @@ export const deleteJugador: RequestHandler = async(req, res) => {
 
 export const updateJugador: RequestHandler = async(req, res) => {
     const jugadorUpdated = await Jugador.findByIdAndUpdate(req.params.id, req.body,{ new:true });
+    console.log(req.body);
     if(!jugadorUpdated){
         return res.status(204).json();
     }
