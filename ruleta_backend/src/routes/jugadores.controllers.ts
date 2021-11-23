@@ -44,12 +44,11 @@ const intervaloEjecutarRuleta = 180000;
 setInterval(async()=>{
     console.log('esto será la funcion core desde el ctrl:' + Date());
     const listaJugadores =  await Jugador.find();
-    //const arreglo = { "nombre": "jhon-snow", "saldo": "708010" }
-    //let jugadorUpdated = await Jugador.findByIdAndUpdate("619ae066d0581ce0afb2562d",arreglo);
-    listaJugadores.forEach(async element => {
-        let jugadorUpdated = await Jugador.findOneAndUpdate({ name: element.nombre}, { saldo: 10000 });
-        console.log(jugadorUpdated);
-        console.log(element.nombre);
+  
+    listaJugadores.forEach( async function(data, index) {
+        
+     let jugadorUpdated = await Jugador.findOneAndUpdate({nombre:data.nombre},{saldo:12000});
+     
     });
 }, intervaloEjecutarRuleta);
 
