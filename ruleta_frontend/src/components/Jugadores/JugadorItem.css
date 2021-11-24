@@ -1,6 +1,9 @@
 .jugador-row:hover {
     font-weight:bold;
-  }
-  .jugador-row-delete:hover {
-    cursor: pointer;
-  }
+}
+.jugador-row-delete:hover {
+  cursor: pointer;
+}
+.form-boton{
+  margin-top: 12px;
+}

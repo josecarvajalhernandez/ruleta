@@ -72,24 +72,23 @@ const JugadorForm = () => {
                   autoFocus
                 />
               </div>
-              <div className="form-group">
-                <label htmlFor="saldo">Saldo*</label>
-                <input
-                  type="text"
-                  name="saldo"
-                  id=""
-                  placeholder="10000"
-                  className="form-control"
-                  onChange={handleInputChange}
-                  value={jugador.saldo}
-                />
-              </div>
+              {
+                params.id ?
+                <div className="form-group">
+                  <label htmlFor="saldo">Saldo*</label>
+                  <input type="text" name="saldo" className="form-control"  onChange={handleInputChange} value={jugador.saldo} />
+                </div>
+                :
+                <input type="hidden" name="saldo" placeholder="10000" value='10000'/>
+              }
+              <div className="form-boton">
               {
                 params.id ?
                 <button className="btn btn-info">Actualizar</button>
                 :
                 <button className="btn btn-primary">Crear</button>
               }
+              </div>
             </form>
           </div>
         </div>

@@ -47,7 +47,7 @@ setInterval(async()=>{
   
     listaJugadores.forEach( async function(data, index) {
         
-     let jugadorUpdated = await Jugador.findOneAndUpdate({nombre:data.nombre},{saldo:12000});
+     // await Jugador.findOneAndUpdate({nombre:data.nombre},{saldo:12210});
      
     });
 }, intervaloEjecutarRuleta);
